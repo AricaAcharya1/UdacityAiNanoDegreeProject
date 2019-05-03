@@ -140,7 +140,7 @@ if __name__ == '__main__':
     img = process_image(img_dir)
 
     # Run image through model
-    probs, classes = predict(img, model, gpu)
+    probs, classes = predict(img, model, gpu,top_k)
 
     # Display probabilities and Classes
 
@@ -148,6 +148,7 @@ if __name__ == '__main__':
     #x = np.array(probs)
 
     print("\n\n**Results from image {} using pretrained model checkpoint {}**".format(img_dir, check_point_path))
+    print("top_k: {}\n\n".format(top_k))
     print("\nProbabilies: {}".format(probs))
     print("Classes: {}\n\n".format(classes))
     print("End of program...")
